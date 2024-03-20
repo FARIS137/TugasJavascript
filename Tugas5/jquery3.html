@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event Handler</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <h1>Klik Gambar Ini Nanti akan ada suara</h1>
+    <div id="div1" onclick="playSound('purring-cat-156459.mp3')"> bongbong is ur name cat</div>
+    <div id="div2" onclick="playSound('kitten-meows-67154.mp3')"> Nailong is ur favorite character</div>
+    <div id="div3" onclick="playSound('cats-fighter.mp3')"> Sains is also your favorite cat</div>
+
+    <audio id="audio" src=""></audio>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script>
+        // ketika mousenya diatas gambar atau kotak maka gambarnya bisa bersuara
+        function playSound(soundSrc) {
+            var audio = document.getElementById('audio');
+            audio.src = soundSrc;
+            audio.play();
+        }
+
+    $(document).ready(function () {
+        $("#div1").mouseover(function () {
+            $(this).css({
+                background: "url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAPtrFj_q-ryLIk83TEHNNNI113ivaoBgSww&usqp=CAU')"
+            });
+        });
+        $("div").mouseout(function(){
+            $(this).css({
+                background: "lightgreen"
+            })
+            $("#div2").mouseover(function () {
+                $(this).css({
+                    background: "url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVW154hkRSA9TfSIPfy9t1kyMofXGEtRSg-w&usqp=CAU')"
+                });    
+            });
+            $("#div3").mouseover(function () {
+                $(this).css({
+                    background: "url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLQGUwtaa0lPwNMhS42yCiHmxiVrmcW6dojQ&usqp=CAU')"
+                });    
+            });
+        })
+    });
+    </script>
+</body>
+</html>
